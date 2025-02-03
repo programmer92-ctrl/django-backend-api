@@ -34,7 +34,7 @@ def add(request):
 
 @csrf_exempt
 def update(request, order_id):
-    if request.method == 'POST':
+    if request.method == 'UPDATE':
         order = Order.objects.filter(pk=order_id).first()
         form = OrderForm(request.POST, instance=order)
         if form.is_valid():
