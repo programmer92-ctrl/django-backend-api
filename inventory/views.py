@@ -34,7 +34,7 @@ def add(request):
 @csrf_exempt
 def update(request, item_id):
     item = Inventory.objects.filter(pk=item_id).first()
-    if request.method == 'POST':
+    if request.method == 'UPDATE':
         form = InventoryForm(request.POST, request.FILES, instance=item)
         if form.is_valid():
             form.save()
